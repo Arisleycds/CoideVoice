@@ -1,9 +1,5 @@
 /node_modules
-/src
-/src-tauri
+/src-tauri/target
 /.dsedit
-icon-source.png
 index.html
-package-lock.json
-package.json
-vite.config.js
+i/lf    w/crlf  attr/text=auto
