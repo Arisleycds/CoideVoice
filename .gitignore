@@ -1,9 +1,0 @@
-/node_modules
-/src
-/src-tauri
-/.dsedit
-icon-source.png
-index.html
-package-lock.json
-package.json
-vite.config.js
