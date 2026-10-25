@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><title>DeepSeek Manager</title>
+<link rel="stylesheet" href="styles.css"></head><body>
+<div class="app-container">
+  <header class="header">
+    <h1>🧠 DeepSeek Manager</h1>
+    <div class="token-counter">Tokens: <span id="token-count">0</span></div>
+  </header>
+  <div class="toolbar">
+    <button id="btn-open-deepseek" class="btn btn-primary">🌐 Abrir DeepSeek</button>
+    <button id="btn-manage-context" class="btn btn-secondary">📊 Contexto</button>
+    <button id="btn-manage-cookies" class="btn btn-secondary">🍪 Login</button>
+    <button id="btn-file-operations" class="btn btn-secondary">📁 Arquivos</button>
+  </div>
+  <div class="panel" id="context-panel">
+    <h2>📋 Contexto</h2>
+    <div class="context-actions">
+      <button id="btn-compress-context" class="btn btn-small">Comprimir</button>
+      <button id="btn-clear-context-panel" class="btn btn-small btn-danger">Limpar</button>
+      <label class="token-limit">Limite: <input type="number" id="token-limit" value="4000" min="100" step="100"></label>
+    </div>
+    <div id="context-display" class="context-display"><p class="placeholder">Nenhum contexto.</p></div>
+  </div>
+  <div class="panel" id="files-panel">
+    <h2>📁 Arquivos</h2>
+    <div class="file-actions">
+      <button id="btn-create-file" class="btn btn-small">➕ Novo</button>
+      <button id="btn-edit-file" class="btn btn-small">✏️ Editar</button>
+      <button id="btn-delete-file" class="btn btn-small btn-danger">🗑️ Excluir</button>
+    </div>
+    <div id="file-list" class="file-list"><p class="placeholder">Vazio.</p></div>
+  </div>
+  <div class="panel" id="cookies-panel">
+    <h2>🍪 Login</h2>
+    <div class="cookie-actions">
+      <button id="btn-export-cookies" class="btn btn-small">Exportar</button>
+      <button id="btn-import-cookies" class="btn btn-small">Importar</button>
+      <button id="btn-check-login" class="btn btn-small">Verificar</button>
+    </div>
+    <p>Status: <span id="login-status">Não verificado</span></p>
+    <textarea id="cookie-input" rows="4"></textarea>
+  </div>
+  <div class="panel" id="log-panel">
+    <h2>📜 Log</h2>
+    <div id="log-output" class="log-output"></div>
+  </div>
+</div>
+<script type="module" src="main.js"></script></body></html>
