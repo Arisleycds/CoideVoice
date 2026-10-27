@@ -1,19 +1,11 @@
 {
-  "productName": "DeepSeek Manager",
-  "version": "1.0.0",
-  "identifier": "com.deepseek.manager",
+  "productName": "DeepEdit",
+  "version": "0.2.0",
+  "identifier": "com.deepedit.app",
   "build": { "frontendDist": "../src" },
   "app": {
     "withGlobalTauri": true,
-    "windows": [
-      {
-        "label": "main",
-        "title": "DeepSeek Manager",
-        "width": 1400,
-        "height": 900,
-        "resizable": true
-      }
-    ],
+    "windows": [{ "label": "main", "title": "DeepEdit", "width": 1400, "height": 900 }],
     "security": { "csp": null }
   },
   "bundle": { "active": true, "targets": "all" }

@@ -1,10 +1,10 @@
 [package]
-name = "deepseek-manager"
-version = "1.0.0"
+name = "deepedit"
+version = "0.2.0"
 edition = "2021"
 
 [lib]
-name = "deepseek_manager_lib"
+name = "deepedit_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]

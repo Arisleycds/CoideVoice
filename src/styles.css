@@ -1,25 +1,45 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:-apple-system,system-ui,sans-serif; background:#f5f5f7; color:#1d1d1f; }
-.app-container { max-width:1200px; margin:0 auto; padding:20px; }
+.app { max-width:1200px; margin:0 auto; padding:20px; }
 .header { display:flex; justify-content:space-between; align-items:center; background:#fff; padding:15px 20px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
 .header h1 { font-size:22px; }
-.token-counter { background:#e8f5e9; padding:8px 16px; border-radius:20px; color:#2e7d32; font-size:14px; }
+.project-badge { background:#f0f0f0; padding:8px 16px; border-radius:20px; font-size:14px; color:#666; }
+.project-badge.active { background:#e8f5e9; color:#2e7d32; font-weight:600; }
 .toolbar { display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap; }
 .btn { padding:10px 20px; border:none; border-radius:8px; font-size:14px; font-weight:500; cursor:pointer; }
 .btn-primary { background:#0071e3; color:#fff; }
 .btn-secondary { background:#fff; color:#1d1d1f; border:1px solid #d2d2d7; }
 .btn-small { padding:6px 14px; font-size:13px; }
 .btn-danger { background:#ff3b30; color:#fff; }
+.btn:disabled { opacity:0.4; cursor:not-allowed; }
 .panel { background:#fff; border-radius:12px; padding:20px; margin-bottom:20px; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
 .panel h2 { font-size:18px; margin-bottom:15px; }
-.context-actions, .file-actions, .cookie-actions { display:flex; gap:10px; margin-bottom:15px; flex-wrap:wrap; align-items:center; }
-.token-limit { display:flex; align-items:center; gap:8px; font-size:14px; }
-.token-limit input { width:100px; padding:6px 10px; border:1px solid #d2d2d7; border-radius:6px; }
-.context-display, .file-list, .log-output { background:#fafafa; border-radius:8px; padding:15px; max-height:300px; overflow-y:auto; }
+.projects-actions { display:flex; gap:10px; margin-bottom:15px; }
+.projects-list, .file-list, .pending-ops, .log-output { background:#fafafa; border-radius:8px; padding:15px; max-height:300px; overflow-y:auto; }
+.project-row { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #e8e8ed; }
+.project-row.active { background:#e8f5e9; margin:0 -15px; padding:10px 15px; }
+.project-info { display:flex; flex-direction:column; gap:4px; }
+.project-name { font-weight:600; }
+.project-meta { font-size:12px; color:#86868b; font-family:monospace; }
 .placeholder { color:#86868b; font-style:italic; }
-.tree-view { font:12px monospace; white-space:pre; }
-.log-output { font:12px monospace; }
-.log-success { color:#2e7d32; } .log-error { color:#c62828; }
-.log-warning { color:#f57c00; } .log-info { color:#1565c0; }
-.status-success { color:#2e7d32; font-weight:600; } .status-error { color:#c62828; font-weight:600; }
-#cookie-input { width:100%; padding:10px; border:1px solid #d2d2d7; border-radius:6px; font:12px monospace; }
+.breadcrumb { font-family:monospace; font-size:13px; color:#666; margin-bottom:10px; padding:6px 10px; background:#f0f0f0; border-radius:6px; }
+.file-item { display:flex; align-items:center; gap:10px; padding:8px; border-radius:6px; cursor:pointer; }
+.file-item:hover { background:#f0f0f0; }
+.file-item.is-dir { font-weight:500; }
+.file-item .file-size { margin-left:auto; font-size:12px; color:#86868b; }
+.op-badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600; margin-right:8px; }
+.op-read { background:#e3f2fd; color:#1565c0; }
+.op-write { background:#e8f5e9; color:#2e7d32; }
+.op-edit { background:#fff3e0; color:#e65100; }
+.op-delete { background:#ffebee; color:#c62828; }
+.op-list { background:#f3e5f5; color:#6a1b9a; }
+.op-append { background:#e0f7fa; color:#00695c; }
+.op-row { padding:6px 0; border-bottom:1px solid #eee; font-size:13px; }
+.op-path { font-family:monospace; }
+.pending-actions { display:flex; gap:10px; margin-top:15px; align-items:center; }
+.auto-run { display:flex; align-items:center; gap:6px; font-size:13px; }
+.log-output { font-family:monospace; font-size:12px; }
+.log-success { color:#2e7d32; }
+.log-error { color:#c62828; }
+.log-warning { color:#f57c00; }
+.log-info { color:#1565c0; }
