@@ -1,1 +1,1 @@
-{}
+{"default":{"identifier":"default","description":"Permissões para todas as janelas do DeepEdit","remote":{"urls":["https://chat.deepseek.com/*","https://*.deepseek.com/*"]},"local":true,"windows":["main","conversa","conversador-chat","edit-chat"],"permissions":["core:default","clipboard-manager:allow-read-text","clipboard-manager:allow-write-text"]}}

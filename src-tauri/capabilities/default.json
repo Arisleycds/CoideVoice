@@ -1,0 +1,17 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Permissões para todas as janelas do DeepEdit",
+  "windows": ["main", "conversa", "conversador-chat", "edit-chat"],
+  "permissions": [
+    "core:default",
+    "clipboard-manager:allow-read-text",
+    "clipboard-manager:allow-write-text"
+  ],
+  "remote": {
+    "urls": [
+      "https://chat.deepseek.com/*",
+      "https://*.deepseek.com/*"
+    ]
+  }
+}

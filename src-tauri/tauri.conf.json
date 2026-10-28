@@ -5,8 +5,22 @@
   "build": { "frontendDist": "../src" },
   "app": {
     "withGlobalTauri": true,
-    "windows": [{ "label": "main", "title": "DeepEdit", "width": 1400, "height": 900 }],
-    "security": { "csp": null }
+    "windows": [
+      {
+        "label": "main",
+        "title": "DeepEdit",
+        "width": 1400,
+        "height": 900,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' asset: http://asset.localhost; script-src 'self' asset: http://asset.localhost 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' asset: http://asset.localhost data: blob:; connect-src 'self' http://localhost:* http://127.0.0.1:*",
+      "assetProtocol": {
+        "enable": true,
+        "scope": ["C:/deepedit/**/*", "$APPDATA/**/*", "$DOCUMENT/**/*"]
+      }
+    }
   },
   "bundle": { "active": true, "targets": "all" }
 }

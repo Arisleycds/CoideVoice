@@ -1,9 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
 
 <head>
   <meta charset="UTF-8">
+  <meta name="theme-color" content="#0d1117">
+  <meta name="color-scheme" content="dark">
   <title>DeepEdit</title>
+  <style>
+    html,
+    body {
+      background: #0d1117;
+      color: #e6edf3;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -12,14 +23,19 @@
     <header class="header">
       <h1>🛠️ DeepEdit</h1>
       <div class="project-badge" id="project-badge">Nenhum projeto</div>
+      <span id="status-badge" class="status-badge status-ok">✅ Pronto</span>
     </header>
 
     <div class="toolbar">
+      <button id="btn-open-conversa" class="btn btn-primary">💬 Conversa</button>
       <button id="btn-open-projects" class="btn btn-secondary">📁 Projetos</button>
-      <button id="btn-open-main-chat" class="btn btn-primary">1️⃣ Chat Principal</button>
-      <button id="btn-open-design-chat" class="btn btn-secondary">2️⃣ Chat Design</button>
-      <button id="btn-open-edit-chat" class="btn btn-secondary">3️⃣ Chat de Edição</button>
+      <button id="btn-open-conversador" class="btn btn-secondary">🗣️ Conversador (IA)</button>
+      <button id="btn-open-edit" class="btn btn-secondary">⚙️ Edição (IA)</button>
       <button id="btn-refresh" class="btn btn-secondary">🔄 Atualizar</button>
+      <button id="btn-git-snapshot" class="btn btn-secondary">💾 Snapshot</button>
+      <button id="btn-git-undo" class="btn btn-secondary">↩️ Desfazer</button>
+      <button id="btn-git-status" class="btn btn-secondary">📊 Git Status</button>
+      <button id="btn-git-log" class="btn btn-secondary">📜 Git Log</button>
     </div>
 
     <div class="panel" id="projects-panel">
@@ -41,14 +57,33 @@
     </div>
 
     <div class="panel">
-      <h2>⚙️ Operações Pendentes</h2>
+      <h2>⚙️ Operações</h2>
       <div id="pending-ops" class="pending-ops">
         <p class="placeholder">Nenhuma operação.</p>
       </div>
       <div class="pending-actions">
-        <button id="btn-run-pending" class="btn btn-small btn-primary" disabled>▶ Executar</button>
         <button id="btn-clear-pending" class="btn btn-small btn-danger" disabled>🗑 Limpar</button>
-        <label class="auto-run"><input type="checkbox" id="btn-auto-run"> Auto-executar</label>
+        <span class="hint-inline">Execução automática ativada</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>👁️ Preview</h2>
+      <div class="preview-controls">
+        <select id="preview-file-select" class="btn btn-small">
+          <option value="">— Selecione um HTML —</option>
+        </select>
+        <button id="btn-refresh-preview" class="btn btn-small">🔄 Recarregar</button>
+      </div>
+      <div id="preview-container" class="preview-container">
+        <p class="placeholder">Nenhum arquivo HTML selecionado.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>🔁 Pipeline</h2>
+      <div id="pipeline-log" class="pipeline-log">
+        <p class="placeholder">Nenhum evento ainda.</p>
       </div>
     </div>
 
